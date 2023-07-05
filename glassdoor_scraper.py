@@ -61,7 +61,7 @@ def get_jobs(keyword, num_jobs, verbose):
                     company_name = driver.find_element(By.XPATH, './/div[@data-test="employerName"]').text
                     location = driver.find_element(By.XPATH, './/div[@data-test="location"]').text
                     job_title = driver.find_element(By.XPATH, './/div[@data-test="jobTitle"]').text
-                    job_description = driver.find_element(By.XPATH, './/div[@class="jobDescriptionContent desc"]').text
+                    job_description = driver.find_element(By.XPATH, './/div[@class="jobDescriptionContent desc"]').get_attribute('textContent')
                     collected_successfully = True
                 except:
                     time.sleep(5)
